@@ -1,8 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Orbitron:wght@400;900&display=swap');
+
 html {
   background: black;
 }
 body {
   margin: 0;
+}
+
+.headerFont {
+ font-family: 'Orbitron';
+}
+
+.bodyFont{
+  font-family: 'Montserrat';
+
+}
+
+
+.type {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto;
+  opacity: 0;
+  animation: typing 2s steps(40, end) forwards;
+  animation-delay: 2s;
+  
+}
+
+.appear {
+  opacity: 0;
+  animation: opacity 10s forwards;
+  animation-delay: 2s;
+}
+
+
+@keyframes typing {
+  0% { 
+    width: 0;
+    opacity: 1; }
+  100% { 
+    width: 100%;
+    opacity: 1;
+   }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 

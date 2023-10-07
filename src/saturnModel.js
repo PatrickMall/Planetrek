@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import * as THREE from 'three';
 import saturnTextureImage from './static/saturnBodyTexture.jpeg'
 import saturnRingsImage from './static/saturnRingTexture.png'
-const Three = () => {
+const SaturnModel = () => {
     const refContainer = useRef(null);
     let sphere = null
     let sphereGeometry = null
@@ -28,9 +28,14 @@ const Three = () => {
       const saturnRingTexture = TextureLoader.load(saturnRingsImage);
       saturnRingTexture.rotation = Math.PI * 0.5
       //group
-      const saturnGroup = new THREE.Group()
-      saturnGroup.rotation.x = Math.PI * 0.10
-      saturnGroup.rotation.z = Math.PI * 0.075
+    const saturnGroup = new THREE.Group()
+    saturnGroup.position.y = 1 
+     
+    saturnGroup.rotation.x = Math.PI * 0.10
+    saturnGroup.rotation.z = Math.PI * 0.075
+    saturnGroup.scale.set(1.5, 1.5, 1.5)
+    
+    
         scene.add(saturnGroup)  
       // planet
     if (sphere !== null) {
@@ -65,7 +70,7 @@ const Three = () => {
     animate();
   }, []);
     return (
-        <div ref={refContainer}></div>
+        <div  className="fixed" ref={refContainer}></div>
     )
 }
-export default Three
+export default SaturnModel
